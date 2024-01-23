@@ -60,18 +60,38 @@
         //     console.log(list[index]);
         // }
 
-        const array = [1,2,3,4];
+        // const array = [1,2,3,4];
 
-        let total = 0;
-        for (let i = 0; i< array.length; i++) {
-            const num = array[i];
-            total += num;
-        }
-        console.log(total);
+        // let total = 0;
+        // for (let i = 0; i< array.length; i++) {
+        //     const num = array[i];
+        //     total += num;
+        // }
+        // console.log(total);
+
+        //array is basically a reference 
+        array1 = [1,2,3];
+        const array2 = array1;
+
+        array2.push(4);
+        //it will change the value in array1 as well since , the arrray2  and array1
+        //now pionts to the same memory  i.e they both reference to same location 
+        console.log(array2);
+        console.log(array1);
+
+        array1 = [1,2,3];
+        const array3 = array1.slice();
+        //this will pass values and not the reference to the same location
+
+        const [n1, n2, n3] = [1,2,3];
 
         
+        //loop has two features called the break and continue
+        //break is used to just come out of the loop
+        // continue is used to skip one iteration of the loop
 
 
+        //while loop ma , increment before continue
         
 
     </script>

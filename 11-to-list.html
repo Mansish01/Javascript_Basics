@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
+
+    <link rel="stylesheet" href="styles/11-todo.css">
 </head>
     <body>
 
         <p>Todo List</p>
-        <input type="text" placeholder="enter the todo task" 
-            class="js-inputtask">
-        <button 
-        onclick="
-            addTodo();
-        ">Add</button>
 
-        <div class="js-todo-list">
+        <div class="todo-input-grid">
+            <input type="text" placeholder="enter the todo task" 
+                class="js-inputtask task-input">
+
+            <input type="date" placeholder="yyyy-mm-dd"
+            class="js-duedate date-input ">
+
+            <button 
+            onclick="
+                addTodo();
+            "class="add-btn">Add</button>
+        </div>
+        <div class="js-todo-list todo-div">
 
         </div>
         <script src="scripts/11-todo.js"></script>
