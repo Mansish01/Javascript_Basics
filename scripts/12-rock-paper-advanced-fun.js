@@ -42,6 +42,33 @@ function autoPlay(){
    
 }
 
+const rockElement = document.querySelector('.js-rock-btn');
+
+// rockElement.addEventListener('click',  playGame('rock'));
+//here playGame(rock) returns a value , but addEventListener requires a whole function 
+// and not a value
+
+rockElement.addEventListener('click',  () => {
+    playGame('rock');
+});
+
+document.body.addEventListener('keydown', (event)=> {
+    // console.log('keydow');
+    // console.log(event.key);
+    if (event.key === 'r'){
+        playGame('rock');
+    }
+
+    else if ( event.key === 'p'){
+        playGame('paper');
+    }
+
+    else if ( event.key === 's') {
+        playGame('scissors');
+    }
+
+    
+})
 
 function playGame(playerMove){
     const computerMove = pickComputerMove();

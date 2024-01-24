@@ -14,10 +14,10 @@ function renderTodo(){
         const html = `
             <div>${name} </div>
             <div>${date} </div>
-            <button onclick = "
+            <button 
                 todoList.splice(${index}, 1);
                 renderTodo();
-          " class="delete-btn">Delete</button>
+          " class="delete-btn js-delete-btn">Delete</button>
         `;
         //html generation  
 
@@ -29,7 +29,21 @@ function renderTodo(){
 
     document.querySelector('.js-todo-list')
         .innerHTML = todolistHTML;
+
+    //there are multiple delete buttons and querySelector only selects the first one
+    //so querySelectorALL is used to select all
+    //it will give a array that matches the given classs
+    document.querySelectorAll('.js-delete-btn')
+        .forEach((deleteBtn , index) => {
+            deleteBtn.addEventListener('click', () => {
+                todoList.splice(index, 1);
+                renderTodo();
+            })
+        })
+
 }
+
+
     // for (let i = 0; i<todoList.length; i++){
     //     const todoObject = todoList[i];
 
@@ -54,6 +68,12 @@ function renderTodo(){
 
     // document.querySelector('.js-todo-list')
     //     .innerHTML = todolistHTML;
+document.querySelector('.js-add-btn')
+    .addEventListener('click', () => {
+        addTodo();
+    })
+
+document.querySelector
 
 function addTodo (){
     const inputElement = document.querySelector('.js-inputtask');
