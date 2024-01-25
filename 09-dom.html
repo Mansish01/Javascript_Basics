@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+     <button>hello</button>
+     <button class="js-button">second button</button>
+    <script>
+
+        // document.body.innerHTML = 'hello';
+        // document.title = 'good job!';
+        // //documnet is linked to the webpage
+
+        // console.log(document.title);
+        
+        // console.log(document.body);
+        // console.log(typeof document.body);
+
+        // console.log(document.body.innerHTML);
+        // document.body.innerHTML = '<button>good job</button>';
+        //innerHTML takes all the html inside the body
+
+        console.log(document.querySelector('button').innerHTML);
+        //this is used to select the specific html element from the weppage
+        //innerHTML takes all the html inside the given html element
+
+        document.querySelector('button')
+            .innerHTML = 'changed';
+
+        document.querySelector('.js-button')
+            .innerHTML = 'changed second button';
+
+        const buttonElement = document.querySelector('.js-button');
+        console.log(buttonElement);
+
+        
+
+    </script>
+</body>
+</html>

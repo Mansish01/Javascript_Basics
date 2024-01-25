@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        // const product = {
+        //     name: 'socks',
+        //     price : '1090'
+        // };
+        // console.log(product);
+        // console.log(product.name);
+        // console.log(product.price);
+
+        // product.name = 'cotten socks';
+        // console.log(product);
+
+        // product.newproperty = true;
+        // console.log(product);
+
+        // delete product.newproperty;
+        // console.log(product);
+
+        const product2 = {
+            name: 'shirt',
+            ['delivery-time']: '1 day',
+            rating : {
+                stars : 4.5,
+                count :5
+            },
+            fun : function function1 (){
+                console.log('function inside the object');
+            }
+        }
+        console.log(product2);
+
+        console.log(product2.name);
+        console.log(product2['name']);
+
+        console.log(product2.rating.stars)
+
+        product2.fun();
+        
+        //console.log(product2.deli-date) , it thinks as a minus instead of a dash
+        // so console.log(product2['deli-date']), is used to access the value of this attribute
+
+        console.log(JSON.stringify(product2)) 
+        //converts js object into the json , but json doesnt support functions
+
+        const jsonstring = JSON.stringify(product2)
+        console.log(JSON.parse(jsonstring))
+        // parse is used to convert json into js object
+
+        //local storage doesnt get deleted when we refresh the page
+
+        console.log('hello'.length);
+        console.log('hello'.toUpperCase());
+        //this feature is callled the auto boxing feature
+
+        const object1 = {
+            message : 'hello'
+        };
+
+        const object2 = object1;
+        // makes a copy of the reference to the object1 by the object2
+
+        object1.message = 'good job!';
+        console.log(object1);
+        //const  basically sets the fixed value that cannot be changed but here , 
+        //object1 just is a reference to some memory location in the computer
+        //and thus being the cont type it can be modified
+
+        console.log(object2);
+        //it will print the modified value since it was a reference to the same location in the memory
+
+        const object3 = {
+            message : 'good job!'
+        }
+
+        console.log( object3 === object1 ); 
+        //this code compares the reference not the value, 
+        // since object1/object3 is the reference, and  not the vlaue, so it will tell false
+
+
+        const object4= {
+            message : 'good job!'
+        }
+
+        const message = object4.message 
+        const {message} = object4
+        //both line give same result 
+
+
+        const object5= {
+            // message : message
+            message,
+            //either way is same 
+        }
+
+
+
+
+
+
+
+        
+
+    </script>
+</body> 
+</html>

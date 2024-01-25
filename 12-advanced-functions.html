@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+</head>
+<body>
+
+    <button onclick=""  class="js-click-btn">Click</button>
+    <script>
+
+        const buttonElement =document.querySelector('.js-click-btn');
+
+        const eventListener = () => {
+            console.log('saved');
+        }
+        //onclick ma , on paxi vako word i.e click is the event 
+        buttonElement.addEventListener('click', eventListener); 
+    
+
+        buttonElement.removeEventListener('click', eventListener );
+
+        buttonElement.addEventListener('click', () => {
+            console.log('saved_add');
+        });
+        //eutai button ko lagi multiple event pani use garna payeo
+
+
+        //filter in array
+        console.log([1,-3,5].filter( (value , index) => {
+            // if (value >= 0){
+            //     return true;
+            // }
+            // else{
+            //     return false;
+            // }
+            return value >2;
+            //relation based ma filter gardinxa
+            //you cannot use value*2 like below
+            //cannot perform mathematical calculation
+        }));
+
+
+        //map in array
+
+        console.log([1,-3,5].map((value, index) => {
+            return value * 2;
+
+        }));
+
+        
+
+
+
+        // function greeting(){
+        //     console.log('hello');
+        // }
+
+        
+        // const function1 = function (){
+        //     //function without a name
+            //function can also be stored in a variable this way
+        //     console.log('hello');
+        // };
+
+        // console.log(function1);
+        // console.log(typeof function1);
+
+        // function1();
+
+        // const object1 = {
+        //     num :2,
+        //     fun : function (){
+        //         console.log('hello1');
+        //     }
+        // }
+
+        // object1.fun ();
+
+        // function display(param){
+        //     console.log(param);
+        // }
+
+        // display(2);
+
+
+
+        // function run(param){
+        //     param();
+        // };
+        // run(function (){
+        //     console.log('hello2');
+                //passing a function to a function 
+        // })
+
+
+        // setTimeout(function (){
+        //     console.log('time out ');
+        // }, 3000);
+        //     //time in milliseconds. so after 3 secs , the function runs
+
+        // //asynchronous code
+        // console.log('next line: ');
+
+        // setInterval(function (){
+        //     console.log('interval :');
+        // }, 3000);
+        // //will run 3 sec in the future but 
+        // // the function will run every 3 sec , in here . keeps running the function
+
+        // console.log('next line1: ');
+
+
+        //looping through an array using forEach
+        // [
+        //     'manish', 
+        //     'kiran', 
+        //     'kobid'
+        // ].forEach(function(value, index){
+
+        //     if(value === 'kobid'){
+        //         return;
+        //     }
+        //     console.log(value,  index);
+        // })
+
+        // const arrowFunction = () => {
+        //     console.log('hello');
+        // }
+
+        // arrowFunction();
+
+        // const oneLine = () => 2+3;
+
+
+        
+    </script>
+</body>
+</html>

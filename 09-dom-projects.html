@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM project</title>
+</head>
+<body>
+
+    <p>Youtube Subscribe Button</p>
+    <button onclick="
+        Subscribe();
+    "class = "js-sub-btn">
+        Subscribe
+    </button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input type="text" placeholder="Cost of Order" class="js-cost" onkeydown="
+        handleCostkeydown(event);
+
+    ">
+    <button onclick="
+        calculate();
+    ">Calculate</button>
+
+    <p class="js-total-cost"></p>
+
+    <script>
+
+        // String() to convert into the string format
+        // console.log('25'-5); ==20
+        // console.log('25'+ 5); ==255
+
+        // window.console.log('window');
+        // window.alert();
+        //but we dont need to type window. , js adds it automatically for us 
+
+        function handleCostkeydown(event){
+            console.log(event.key);
+
+        if (event.key === 'Enter'){
+            calculate();
+        }
+        }
+
+        function calculate (){
+            const inputElement = document.querySelector('.js-cost');
+
+            let cost = Number(inputElement.value);
+
+            if (cost <= 40){
+                cost = cost + 10;
+            }
+            
+            document.querySelector('.js-total-cost')
+                .innerHTML = `$ ${cost}`;
+        }
+        function Subscribe (){
+            const buttonElement = document.querySelector('.js-sub-btn');
+
+        if(buttonElement.innerText === 'Subscribe'){ //to handle the spaves innertext is used
+            buttonElement.innerHTML = 'Subscribed';
+        }
+        else {
+            buttonElement.innerHTML = 'Subscribe';
+        }
+        }
+    </script>
+</body>
+</html>
